@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import {CircularProgress} from '@material-ui/core'
+
 import MyButton from './myButton';
 import MyCard from './Card';
 
@@ -30,9 +32,7 @@ const Home = () => {
 				}
 			/>
 			{isLoading ? (
-				<video width="320" height="240" >
-                <source src="movie.mp4" type="video/mp4"/>
-              </video>
+				<CircularProgress />
 			) : (
 				pokemons.results?.map((poke) => {
 					return <MyCard key={poke} pokemon={poke.name} />;
