@@ -37,7 +37,7 @@ const Pokemon = () => {
 
 	return (
 		<div>
-			{isLoading?'Cargando':<Card style={{ width: '50%', margin: 'auto' }} variant='outlined'>
+			{isLoading?<img src="https://external-preview.redd.it/6CfjGVKp0x6iXDG7EybVKhEgDmzTlUCMtRjuUX4yzrM.gif?format=mp4&s=d1d66fcf83904115420311604f7c739662b65ba0" alt="Cargando"/>:<Card style={{ width: '50%', margin: 'auto' }} variant='outlined'>
 				<CardMedia
                     component='img'
                     style={{width:'500px',margin:'auto'}}

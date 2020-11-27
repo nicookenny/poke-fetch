@@ -8,7 +8,9 @@ import MyCard from './Card';
 const handleClick = async (url, cb, loading) => {
 	loading(true);
 	const poke = await (await fetch(url)).json();
-	loading(false);
+	setTimeout(() => {
+		loading(false);
+	}, 1500);
 	cb({ results: poke.results, next: poke.next, previous: poke.previous });
 };
 
@@ -27,11 +29,15 @@ const Home = () => {
 					)
 				}
 			/>
-			{isLoading
-				? 'Cargando'
-				: pokemons.results?.map((poke) => {
-						return <MyCard pokemon={poke.name} />;
-				  })}
+			{isLoading ? (
+				<video width="320" height="240" >
+                <source src="movie.mp4" type="video/mp4"/>
+              </video>
+			) : (
+				pokemons.results?.map((poke) => {
+					return <MyCard key={poke} pokemon={poke.name} />;
+				})
+			)}
 			{pokemons.previous ? (
 				<MyButton
 					name='previous'
