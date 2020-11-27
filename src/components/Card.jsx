@@ -13,14 +13,14 @@ import {
 const MyCard = ({ pokemon }) => {
 	return (
 		<div>
-			<Card variant='outlined'>
+			<Card style={{width:'50%',margin:'auto'}} variant='outlined'>
 				<CardContent>
 					<Typography color='textSecondary' gutterBottom>
 						{pokemon}
 					</Typography>
 				</CardContent>
 				<CardActions>
-					<Link to={`/${pokemon}`}><Button size='small'>Learn More</Button></Link>
+					<Link  style={{margin:'auto'}} to={`/${pokemon}`}><Button variant="contained" color="secondary" size='large'>Ver detalles</Button></Link>
 				</CardActions>
 			</Card>
 		</div>
